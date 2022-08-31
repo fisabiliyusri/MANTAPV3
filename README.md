@@ -38,7 +38,7 @@
 # SSH Websocket Examples
 - Domain/IP/Host: namedomain/ip/bughost
 - SNI: bughost
-- Payload
+- Payload:
 ```
 GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connection: keep-alive[crlf][crlf]
 ```
