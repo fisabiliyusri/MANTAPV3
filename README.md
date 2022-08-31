@@ -11,11 +11,19 @@ Script Auto Installer Multi All Port 443,80
 - SSH WS SSL/TLS   : **443**
 - SSLH             : **NULL**
 - STUNNEL5         : **NULL**
-- SlowDNS          : **22**
+- SlowDNS          : **2269,3369**
 - Badvpn           : **7100, 7200, 7300**
 - Nginx            : **81, 89**
 - CloudFront WS    : **OFF**
 - Squid            : **OFF**
+
+# SSH Websocket Examples
+- Domain/IP/Host: namedomain/ip/bughost
+- SNI: bughost
+- Payload
+```
+GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connection: keep-alive[crlf][crlf]
+```
 
 # FITUR XRAY TLS
 - TROJAN WS        : **443**
