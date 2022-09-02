@@ -10,19 +10,33 @@ else
 fi
 #
 # CEK SSH DROPBEAR
-dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+dropbear_service=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE DROPBEAR
-if [[ $dropbear_status == "running" ]]; then 
+if [[ $dropbear_service == "running" ]]; then 
    status_beruangjatuh=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
    status_beruangjatuh="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # CEK SLOWDNS CLIENT
-status_slowdns_client=$(systemctl status client-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+slowdns_client_service=$(systemctl status client-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SLOWDNS SERVER
+if [[ $slowdns_client_service == "running" ]]; then 
+   status_slowdns_client=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+   status_slowdns_client="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+#
 
 # CEK SLOWDNS SERVER
-status_slowdns_server=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+slowdns_server_service=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SLOWDNS SERVER
+if [[ $slowdns_server_service == "running" ]]; then 
+   status_slowdns_server=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+   status_slowdns_server="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 
 
 # STUNNEL5
