@@ -1,3 +1,56 @@
+#!/bin/bash
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+yl='\e[32;1m'
+bl='\e[36;1m'
+gl='\e[32;1m'
+rd='\e[31;1m'
+mg='\e[0;95m'
+blu='\e[34m'
+op='\e[35m'
+or='\033[1;33m'
+bd='\e[1m'
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
+# Getting
+#########################
+# GETTING OS INFORMATION
+source /etc/os-release
+Versi_OS=$VERSION
+ver=$VERSION_ID
+Tipe=$NAME
+URL_SUPPORT=$HOME_URL
+basedong=$ID
+
+# VPS ISP INFORMATION
+#ITAM='\033[0;30m'
+echo -e "$ITAM"
+#REGION=$( curl -s ipinfo.io/region )
+#clear
+#COUNTRY=$( curl -s ipinfo.io/country )
+#clear
+#WAKTU=$( curl -s ipinfo.ip/timezone )
+#clear
+CITY=$( curl -s ipinfo.io/city )
+#clear
+#REGION=$( curl -s ipinfo.io/region )
+#clear
+
+MYIP=$(curl -sS ipinfo.io/ip)
+#
+# COLOR VALIDATION
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+clear
 #
 # OPENSSH
 # CEK SSH OPENSSH
@@ -118,8 +171,12 @@ else
 fi
 # NGINX
 #
-#clear
 clear
+# KERNEL TERBARU
+kernelku=$(uname -r)
+# TOTAL RAM
+total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
+totalram=$(($total_ram/1024))
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 Slow="$(cat /root/nsdomain)"
