@@ -112,3 +112,8 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 wget -O /etc/issue.net "https://raw.githubusercontent.com/fisabiliyusri/MANTAPV3/main/ssh/issue.net"
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
+
+echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
+echo "0 18 * * * root clearlog && reboot" >> /etc/crontab
+echo "0 0 * * * root clearlog && reboot" >> /etc/crontab
+echo "0 13 * * * root clearlog && restart" >> /etc/crontab
