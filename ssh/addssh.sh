@@ -43,6 +43,9 @@ systemctl restart client-sldns
 systemctl restart server-sldns
 systemctl restart ws-tls
 systemctl restart ws-nontls
+systemctl restart xray
+systemctl restart nginx
+systemctl restart superxray
 systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
