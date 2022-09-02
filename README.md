@@ -23,12 +23,12 @@
 # Service & Port
 
 # FITUR SSH
-- SSH OpenSSH      : **22**
-- SSH Dropbear     : **143**
-- SSH WS HTTP      : **80**
-- SSH WS SSL/TLS   : **443**
-- SSLH             : **NULL**
-- STUNNEL5         : **NULL**
+- SSH OpenSSH      : **22,99,169,2269,3369**
+- SSH Dropbear     : **109,143,300,1153**
+- SSH WS HTTP      : **80,8000**
+- SSH WS SSL/TLS   : **443,8000**
+- SSLH             : **8000**
+- STUNNEL5         : **8000**
 - SlowDNS          : **5300,2269,3369**
 - BadVPN/UDPGW      : **7100,7200,7300**
 - Nginx             : **80,443,89**
