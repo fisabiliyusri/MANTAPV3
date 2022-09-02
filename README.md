@@ -77,9 +77,11 @@ tunggu dulu woy
 - Nginx             : **80,443,89**
 
 # FITUR OPENVPN
-- OpenVPN TCP       : 80,8000
-- OpenVPN UDP       : ...
-- OpenVPN Websocket : 443,8000
+- OpenVPN TCP           : 8000,1194
+- OpenVPN UDP           : 2086
+- OpenVPN SSL           : 990
+- OpenVPN TCP Websocket : 80
+- OpenVPN SSL Websocket : 443
 
 # FITUR XRAY TLS
 - Nginx            : **80,443,89**
