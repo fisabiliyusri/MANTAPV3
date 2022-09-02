@@ -1,5 +1,5 @@
 #
-#
+# OPENSSH
 # CEK SSH OPENSSH
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE  SSH 
@@ -8,7 +8,9 @@ if [[ $ssh_service == "running" ]]; then
 else
    status_ssh="${RED}  Not Running ${NC}  ( Error )"
 fi
-#
+# OPENSSH
+
+# DROPBEAR
 # CEK SSH DROPBEAR
 dropbear_service=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE DROPBEAR
@@ -18,6 +20,7 @@ else
    status_beruangjatuh="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# SLOWDNS CLIENT
 # CEK SLOWDNS CLIENT
 slowdns_client_service=$(systemctl status client-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SLOWDNS SERVER
@@ -27,6 +30,7 @@ else
    status_slowdns_client="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# SLOWDNS SERVER
 # CEK SLOWDNS SERVER
 slowdns_server_service=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SLOWDNS SERVER
@@ -35,7 +39,9 @@ if [[ $slowdns_server_service == "running" ]]; then
 else
    status_slowdns_server="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
+# SLOWDNS SERVER
 
+# SSLH
 # CEK SSLH
 sslh_service=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE SSLH / SSH
@@ -44,9 +50,10 @@ if [[ $sslh_service == "running" ]]; then
 else
    status_sslh="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
-
+# SSLH
 
 # STUNNEL5
+# CEK STUNNEL5
 stunnel_service=$(/etc/init.d/stunnel5 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE STUNNEL
 if [[ $stunnel_service == "running" ]]; then 
@@ -54,7 +61,25 @@ if [[ $stunnel_service == "running" ]]; then
 else
    status_stunnel="${RED}  Not Running ${NC}  ( Error )}"
 fi
+# STUNNEL5
 
+# SSH WEBSOCKET TLS
+# STATUS SERVICE SSH WEBSOCKET TLS
+if [[ $wstls == "running" ]]; then 
+   swstls=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   swstls="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+# SSH WEBSOCKET TLS
+
+# SSH WEBSOCKET HTTP
+# STATUS SERVICE SSH WEBSOCKET HTTP
+if [[ $wsdrop == "running" ]]; then 
+   swsdrop=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+# SSH WEBSOCKET HTTP
 #
 #
 # GETTING DOMAIN NAME
