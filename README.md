@@ -78,7 +78,7 @@ tunggu dulu woy
 
 # FITUR OPENVPN
 - OpenVPN TCP           : 8000,1194
-- OpenVPN UDP           : 2086
+- OpenVPN UDP           : 2200
 - OpenVPN SSL           : 990
 - OpenVPN TCP Websocket : 80
 - OpenVPN SSL Websocket : 443
