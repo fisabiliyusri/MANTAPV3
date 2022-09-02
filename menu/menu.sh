@@ -1,6 +1,6 @@
 #
 #
-# CEK OPENSSH
+# CEK SSH OPENSSH
 ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
@@ -75,7 +75,7 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[44;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "❇️ SSH OpenSSH             :$status_ssh"
-echo -e "❇️ SSH Dropbear            :$status_beruangjatuh""
+echo -e "❇️ SSH Dropbear            :$status_beruangjatuh"
 echo -e "❇️ SlowDNS Server          :$status_slowdns_server"
 echo -e "❇️ SlowDNS Client          :$status_slowdns_client"
 echo -e "❇️ SSLH                    :$status_sslh"
