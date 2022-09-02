@@ -83,7 +83,40 @@ else
    status_websocket_http="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 # SSH WEBSOCKET HTTP
+
+# XRAY
+# CEK XRAY
+xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SERVICE SSLH / SSH
+if [[ $xray_service == "running" ]]; then 
+   status_xray=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_xray="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+# XRAY
+
 #
+# SUPER XRAY
+# CEK SUPER XRAY
+super_xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SERVICE SSLH / SSH
+if [[ $super_xray_service == "running" ]]; then 
+   status_super_xray=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_super_xray="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+# SUPER XRAY
+
+# NGINX
+# CEK NGINX
+nginx_service=$(/etc/init.d/nginx status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SERVICE STUNNEL
+if [[ $nginx_service == "running" ]]; then 
+   status_nginx=" ${GREEN}Running ${NC}( No Error )"
+else
+   status_nginx="${RED}  Not Running ${NC}  ( Error )}"
+fi
+# NGINX
 #
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
