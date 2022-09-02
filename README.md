@@ -64,7 +64,7 @@ tunggu dulu woy
 # SETTINGAN CLOUDFLARE
 
 
-# FITUR SSH
+# SERVICE PORT SSH
 - SSH OpenSSH      : **22,99,169,2269,3369**
 - SSH Dropbear     : **109,143,300,1153**
 - SSH DIRECT       : **8000**
@@ -76,14 +76,7 @@ tunggu dulu woy
 - BadVPN/UDPGW      : **7100,7200,7300**
 - Nginx             : **80,443,89**
 
-# FITUR OPENVPN
-- OpenVPN TCP           : 8000,1194
-- OpenVPN UDP           : 2200
-- OpenVPN SSL           : 990
-- OpenVPN TCP Websocket : 80
-- OpenVPN SSL Websocket : 443
-
-# FITUR XRAY TLS
+# SERVICE PORT XRAY TLS
 - Nginx            : **80,443,89**
 - TROJAN WS        : **443**
 - TROJAN GRPC      : **443**
@@ -94,7 +87,7 @@ tunggu dulu woy
 - VLESS WS         : **443**
 - VLESS GRPC       : **443**
 
-# FITUR XRAY HTTP
+# SERVICE PORT XRAY HTTP
 - Nginx             : **80,443,89**
 - TROJAN WS        : **80**
 - TROJAN GRPC      : **80**
