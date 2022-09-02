@@ -219,4 +219,39 @@ echo -e "❇️ XRAY Multi Port         :$status_xray"
 echo -e "❇️ Super XRAY              :$status_super_xray"
 echo -e "❇️ NGINX                   :$status_nginx"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo ""
+echo -e "\E[44;1;39m            ⇱ MENU ⇲             \E[0m"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "❇️ 1. SSH MENU"
+echo -e "❇️ 2. XRAY MENU"
+echo -e "❇️ 3. CEK MENU"
+echo -e "❇️ 4. UPDATE MENU"
+echo -e "❇️ 5. SETTINGS MENU"
+echo -e "❇️ 6. Exit/Keluar"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "\E[44;1;39m            ⇱ MENU ⇲             \E[0m"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+read -p "     Select From Options [1-69 or x] :  " menu
+case $menu in 
+1)
+menu-ssh
+;;
+2)
+menu-xray
+;;
+3)
+menu-cek
+;;
+4)
+menu-update
+;;
+5)
+menu-setting
+;;
+6)
+exit
+;;
+*)
+clear
+menu
+;;
+esac
