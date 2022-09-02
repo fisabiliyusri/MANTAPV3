@@ -25,6 +25,7 @@
 # FITUR SSH
 - SSH OpenSSH      : **22,99,169,2269,3369**
 - SSH Dropbear     : **109,143,300,1153**
+- SSH DIRECT       : **8000**
 - SSH WS HTTP      : **80,8000**
 - SSH WS SSL/TLS   : **443,8000**
 - SSLH             : **8000**
