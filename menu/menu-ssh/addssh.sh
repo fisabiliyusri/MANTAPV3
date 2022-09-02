@@ -1,17 +1,24 @@
 #!/bin/bash
-
-# ==========================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
+# WARNA
 GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
+NC='\033[0m'
+yl='\e[32;1m'
+bl='\e[36;1m'
+gl='\e[32;1m'
+rd='\e[31;1m'
+mg='\e[0;95m'
+blu='\e[34m'
+op='\e[35m'
+or='\033[1;33m'
+bd='\e[1m'
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
 # ==========================================
-# Getting
+# ==========================================
+# WARNA
 
 domain=$(cat /etc/xray/domain)
 sldomain=$(cat /root/nsdomain)
@@ -52,6 +59,9 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e ""
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "\E[44;1;39m            ⇱ BUAT AKUN SSH ⇲             \E[0m"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "Informasi Akun Premium SSH"
 echo -e "=============================="
 echo -e "Username: $Login"
@@ -80,5 +90,7 @@ echo -e "Payload Websocket"
 echo -e "=============================="
 echo -e "GET wss://bug.com/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "=============================="
-echo -e "Script MANTAPV3 by SL"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "\E[44;1;39m            ⇱ Script MANTAPV3 by SL ⇲             \E[0m"
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""
