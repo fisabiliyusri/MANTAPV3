@@ -23,17 +23,23 @@
 # Service & Port
 
 # FITUR SSH
-- OpenSSH          : **22**
-- Dropbear         : **143**
+- SSH OpenSSH      : **22**
+- SSH Dropbear     : **143**
 - SSH WS HTTP      : **80**
 - SSH WS SSL/TLS   : **443**
 - SSLH             : **NULL**
 - STUNNEL5         : **NULL**
-- SlowDNS          : **2269,3369**
-- Badvpn           : **7100,7200,7300**
-- Nginx            : **80,443,89**
+- SlowDNS          : **5300,2269,3369**
+- BadVPN/UDPGW      : **7100,7200,7300**
+- Nginx             : **80,443,89**
+
+# FITUR OPENVPN
+- OpenVPN TCP       : 80,8000
+- OpenVPN UDP       : ...
+- OpenVPN Websocket : 443,8000
 
 # FITUR XRAY TLS
+- Nginx            : **80,443,89**
 - TROJAN WS        : **443**
 - TROJAN GRPC      : **443**
 - SHADOWSOCKS WS   : **443**
@@ -44,6 +50,7 @@
 - VLESS GRPC       : **443**
 
 # FITUR XRAY HTTP
+- Nginx             : **80,443,89**
 - TROJAN WS        : **80**
 - TROJAN GRPC      : **80**
 - SHADOWSOCKS WS   : **80**
