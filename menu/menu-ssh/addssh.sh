@@ -52,7 +52,7 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e ""
-echo -e "Informasi Akun SSH"
+echo -e "Informasi Akun Premium SSH"
 echo -e "=============================="
 echo -e "Username: $Login"
 echo -e "Password: $Pass"
@@ -81,3 +81,4 @@ echo -e "=============================="
 echo -e "GET wss://bug.com/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "=============================="
 echo -e "Script MANTAPV3 by SL"
+echo -e ""
