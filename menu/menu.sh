@@ -64,20 +64,23 @@ fi
 # STUNNEL5
 
 # SSH WEBSOCKET TLS
+# CEK 
+websocket_service_tls=$(systemctl status ws-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE SSH WEBSOCKET TLS
-if [[ $wstls == "running" ]]; then 
-   swstls=" ${GREEN}Running ${NC}( No Error )${NC}"
+if [[ $websocket_service_tls == "running" ]]; then 
+   status_websocket_tls=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   swstls="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_websocket_tls="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 # SSH WEBSOCKET TLS
 
 # SSH WEBSOCKET HTTP
+websocket_service_http=$(systemctl status ws-nontls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SERVICE SSH WEBSOCKET HTTP
-if [[ $wsdrop == "running" ]]; then 
-   swsdrop=" ${GREEN}Running ${NC}( No Error )${NC}"
+if [[ $websocket_service_http == "running" ]]; then 
+   status_websocket_http=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_websocket_http="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 # SSH WEBSOCKET HTTP
 #
@@ -105,8 +108,8 @@ echo -e "❇️ SlowDNS Server          :$status_slowdns_server"
 echo -e "❇️ SlowDNS Client          :$status_slowdns_client"
 echo -e "❇️ SSLH                    :$status_sslh"
 echo -e "❇️ SSH Stunnel5            :$status_stunnel"
-echo -e "❇️ SSH Websocket TLS       :$swstls"
-echo -e "❇️ SSH Websocket HTTP      :$swsdrop"
+echo -e "❇️ SSH Websocket TLS       :$status_websocket_tls"
+echo -e "❇️ SSH Websocket HTTP      :$status_websocket_http"
 echo -e "❇️ XRAY Multi Port         :$status_xray"
 echo -e "❇️ Super XRAY              :$status_super_xray"
 echo -e "❇️ NGINX                   :$status_nginx"
