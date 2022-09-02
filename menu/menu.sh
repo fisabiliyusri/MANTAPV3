@@ -27,8 +27,6 @@ else
    status_slowdns_client="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-#
-
 # CEK SLOWDNS SERVER
 slowdns_server_service=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 # STATUS SLOWDNS SERVER
@@ -36,6 +34,15 @@ if [[ $slowdns_server_service == "running" ]]; then
    status_slowdns_server=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
    status_slowdns_server="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# CEK SSLH
+sslh_service=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+# STATUS SERVICE SSLH / SSH
+if [[ $sslh_service == "running" ]]; then 
+   status_sslh=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_sslh="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 
@@ -71,7 +78,7 @@ echo -e "❇️ SSH OpenSSH             :$status_ssh"
 echo -e "❇️ SSH Dropbear            :$status_beruangjatuh""
 echo -e "❇️ SlowDNS Server          :$status_slowdns_server"
 echo -e "❇️ SlowDNS Client          :$status_slowdns_client"
-echo -e "❇️ SSLH                    :$sosslh"
+echo -e "❇️ SSLH                    :$status_sslh"
 echo -e "❇️ SSH Stunnel5            :$status_stunnel"
 echo -e "❇️ SSH Websocket TLS       :$swstls"
 echo -e "❇️ SSH Websocket HTTP      :$swsdrop"
