@@ -95,8 +95,8 @@ trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&s
 trojanlinkws="trojan://${uuid}@${domain}:443?path=/xraytrojanws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
 
 #buattrojan 80
-trojanlinkgrpc="trojan://${uuid}@${domain}:80?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
-trojanlinkws="trojan://${uuid}@${domain}:80?path=/xraytrojanws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
+trojanlinkgrpc="trojan://${uuid}@${domain}:80?mode=gun&security=none&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
+trojanlinkws="trojan://${uuid}@${domain}:80?path=/xraytrojanws&security=none&host=bug.com&type=ws&sni=bug.com#${user}"
 
 #buatshadowsocks custom
 #
