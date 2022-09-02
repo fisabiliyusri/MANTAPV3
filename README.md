@@ -30,18 +30,8 @@
 - SSLH             : **NULL**
 - STUNNEL5         : **NULL**
 - SlowDNS          : **2269,3369**
-- Badvpn           : **7100, 7200, 7300**
-- Nginx            : **81, 89**
-- CloudFront WS    : **OFF**
-- Squid            : **OFF**
-
-# SSH Websocket Examples
-- Domain/IP/Host: namedomain/ip/bughost
-- SNI: bughost
-- Payload:
-```
-GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connection: keep-alive[crlf][crlf]
-```
+- Badvpn           : **7100,7200,7300**
+- Nginx            : **80,443,89**
 
 # FITUR XRAY TLS
 - TROJAN WS        : **443**
@@ -64,3 +54,16 @@ GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connect
 - VLESS GRPC       : **80**
 
 
+# SSH Websocket Examples
+- ***Domain/IP/Host: namedomain/ip/bughost/serverssh/proxy***
+- ***SNI: bughost***
+- ***Payload:***
+```
+GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connection: keep-alive[crlf][crlf]
+```
+- ***Proxy: namedomain/ip/bughost/serverssh/proxy***
+
+# XRAY Websocket Examples
+- ...
+# XRAY GRPC Examples
+- ...
