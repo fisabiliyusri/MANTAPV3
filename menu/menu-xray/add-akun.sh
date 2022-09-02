@@ -314,18 +314,22 @@ END
 #
 #buatvmess
 clear
+echo -e "
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a /etc/log-create-user.log
+echo -e "\E[44;1;39m            ⇱ BUAT SEMUA AKUN XRAY ⇲             \E[0m" | tee -a /etc/log-create-user.log
+echo -e "\E[44;1;39m            ⇱ XRAY MANTAPV3 Multi All Port ⇲             \E[0m" | tee -a /etc/log-create-user.log
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
-echo -e "====== XRAY MANTAP Multi Port=======" | tee -a /etc/log-create-user.log
-echo -e "INFORMASI AKUN VPN XRAY" | tee -a /etc/log-create-user.log
+echo -e "=========INFORMASI AKUN VPN XRAY=========" | tee -a /etc/log-create-user.log
+echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
 echo -e "IP: $MYIP" | tee -a /etc/log-create-user.log
 echo -e "Host/Domain: $domain" | tee -a /etc/log-create-user.log
 echo -e "Password/ID: $uuid" | tee -a /etc/log-create-user.log
 echo -e "====== Service Port =======" | tee -a /etc/log-create-user.log
-echo -e "Websocket TLS  : 443" | tee -a /etc/log-create-user.log
-echo -e "Websocket HTTP : 80" | tee -a /etc/log-create-user.log
-echo -e "GRPC TLS       : 443" | tee -a /etc/log-create-user.log
-echo -e "*Note OPOK: opok only supports coremeta"
-echo -e "*Note SHADOWSOCKS: gunakan custom config atau plugin xray"
+echo -e "Websocket SSL/TLS: 443" | tee -a /etc/log-create-user.log
+echo -e "Websocket HTTP/NON TLS: 80" | tee -a /etc/log-create-user.log
+echo -e "GRPC SSL/TLS: 443" | tee -a /etc/log-create-user.log
+echo -e "GRPC HTTP/NON TLS: 80" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
 
 echo -e "Protokol VPN: TROJAN" | tee -a /etc/log-create-user.log
