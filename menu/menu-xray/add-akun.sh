@@ -382,6 +382,6 @@ echo -e "=> WS TLS : /xrayvws" | tee -a /etc/log-create-user.log
 echo -e "=> GRPC   : vmess-grpc" | tee -a /etc/log-create-user.log
 echo -e "=> OPOK   : ws://bugcom/xrayvws" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
-echo -e "SCRIPT MANTAP XRAY" | tee -a /etc/log-create-user.log
+echo -e "SCRIPT MANTAPV3 by SL" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 cd
