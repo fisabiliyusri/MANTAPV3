@@ -20,7 +20,46 @@
 </h2>
 </div>
 
-# Service & Port
+#
+# Cara Install Script MANTAPV3
+- Login ke VPS kamu (VPS WAJIB PAKE AKSES ROOT )
+- HARAP DI BACA ,INI SCRIPT UNTUK MEMBUAT SERVER VPN /MEMASANG SERVER VPN
+1. MASUK KE VPS LALU KETIK
+```
+sudo su
+```
+atau
+```
+sudo -i
+```
+2. UPDATE VPS
+
+```
+apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
+```
+- VPS Otomatis Akan Reboot/ Hidupkan Ulang VPS
+3. Login Lagi Ke VPS
+- Aktifkan Akses ROOT
+```
+sudo su
+```
+atau
+```
+sudo -i
+```
+4. INSTALL SCRIPT
+- Instalasi Script VPN Multi All Port
+- JANGAN KELUAR DARI TERMINAL/APLIKASI JIKA LAGI DALAM PROSES INSTALASI
+- HARAP DI BACA
+- VPS WAJIB PUNYA AKSES ROOT
+```
+tunggu dulu woy
+```
+
+# CARA POINTING DOMAIN/IP VPS KE CLOUDFLARE (MANUAL)
+
+# SETTINGAN CLOUDFLARE
+
 
 # FITUR SSH
 - SSH OpenSSH      : **22,99,169,2269,3369**
@@ -62,6 +101,7 @@
 - VLESS GRPC       : **80**
 
 
+# Injeck SSH Examples
 # SSH Websocket Examples
 - ***Domain/IP/Host: namedomain/ip/bughost/serverssh/proxy***
 - ***SNI: bughost***
@@ -71,6 +111,7 @@ GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connect
 ```
 - ***Proxy: namedomain/ip/bughost/serverssh/proxy***
 
+# Injeck XRAY Examples
 # XRAY Websocket Examples
 - ...
 # XRAY GRPC Examples
