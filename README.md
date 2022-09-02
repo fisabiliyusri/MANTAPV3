@@ -24,7 +24,8 @@
 # Cara Install Script MANTAPV3
 - Login ke VPS kamu (VPS WAJIB PAKE AKSES ROOT )
 - HARAP DI BACA ,INI SCRIPT UNTUK MEMBUAT SERVER VPN /MEMASANG SERVER VPN
-1. MASUK KE VPS LALU KETIK
+
+***1. MASUK KE VPS LALU KETIK***
 ```
 sudo su
 ```
@@ -32,13 +33,15 @@ atau
 ```
 sudo -i
 ```
-2. UPDATE VPS
+
+***2. UPDATE VPS***
 
 ```
 apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 ```
 - VPS Otomatis Akan Reboot/ Hidupkan Ulang VPS
-3. Login Lagi Ke VPS
+
+***3. Login/Masuk Lagi Ke VPS***
 - Aktifkan Akses ROOT
 ```
 sudo su
@@ -47,7 +50,7 @@ atau
 ```
 sudo -i
 ```
-4. INSTALL SCRIPT
+***4. INSTALL SCRIPT***
 - Instalasi Script VPN Multi All Port
 - JANGAN KELUAR DARI TERMINAL/APLIKASI JIKA LAGI DALAM PROSES INSTALASI
 - HARAP DI BACA
