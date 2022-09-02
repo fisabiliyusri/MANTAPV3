@@ -85,10 +85,10 @@ sed -i '/#vmessgrpc$/a\#& '"$user $exp"'\
 systemctl restart xray
 #buatvless WEBSOCKET
 vlesslinkws="vless://${uuid}@${domain}:443?path=/xrayws&security=tls&encryption=none&type=ws#${user}"
-vlesslinknon="vless://${uuid}@${domain}:80?path=/xrayws&encryption=none&type=ws#${user}"
+vlesslinknon="vless://${uuid}@${domain}:80?path=/xrayws&security=none&encryption=none&type=ws#${user}"
 #buatvless GRPC
 vlesslinkgrpc="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
-vlesslinknon="vless://${uuid}@${domain}:80?mode=gun&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+vlesslinknon="vless://${uuid}@${domain}:80?mode=gun&security=none&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 
 #buattrojan 443
 trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
@@ -114,11 +114,11 @@ shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mu
 
 #buat ss WEBSOCKET
 sslinkws="ss://${shadowsocks_base64e}@${domain}:443?path=/xrayssws&security=tls&encryption=none&type=ws#${user}"
-nonsslinkws="ss://${shadowsocks_base64e}@${domain}:80?path=/xrayssws&encryption=none&type=ws#${user}"
+nonsslinkws="ss://${shadowsocks_base64e}@${domain}:80?path=/xrayssws&security=none&encryption=none&type=ws#${user}"
 
 #buat ss GRPC
 sslinkgrpc="ss://${shadowsocks_base64e}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
-nonsslinkgrpc="ss://${shadowsocks_base64e}@${domain}:80?mode=gun&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
+nonsslinkgrpc="ss://${shadowsocks_base64e}@${domain}:80?mode=gun&security=none&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
 
 systemctl restart xray
 rm -rf /tmp/log
