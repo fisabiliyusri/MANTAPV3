@@ -83,15 +83,18 @@ sed -i '/#vmessgrpc$/a\#& '"$user $exp"'\
 
 #
 systemctl restart xray
-#buatvless
+#buatvless WEBSOCKET
 vlesslinkws="vless://${uuid}@${domain}:443?path=/xrayws&security=tls&encryption=none&type=ws#${user}"
 vlesslinknon="vless://${uuid}@${domain}:80?path=/xrayws&encryption=none&type=ws#${user}"
+#buatvless GRPC
 vlesslinkgrpc="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+vlesslinknon="vless://${uuid}@${domain}:80?mode=gun&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 
 #buattrojan
 trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlinkws="trojan://${uuid}@${domain}:443?path=/xraytrojanws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
-#buatshadowsocks
+
+#buatshadowsocks custom
 #
 cipher="aes-128-gcm"
 sed -i '/#ssws$/a\### '"$user $exp"'\
@@ -104,6 +107,15 @@ echo -n "${shadowsocks_base64}" | base64 > /tmp/log1
 shadowsocks_base64e=$(cat /tmp/log1)
 shadowsockslink="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;path=/xrayssws;host=$domain;tls#${user}"
 shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;tls#${user}"
+
+#buat ss WEBSOCKET
+sslinkws="ss://${shadowsocks_base64e}@${domain}:443?path=/ssws&security=tls&encryption=none&type=ws#${user}"
+nonsslinkws="ss://${shadowsocks_base64e}@${domain}:80?path=/ssws&encryption=none&type=ws#${user}"
+
+#buat ss GRPC
+sslinkgrpc="ss://${shadowsocks_base64e}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
+nonsslinkgrpc="ss://${shadowsocks_base64e}@${domain}:80?mode=gun&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
+
 systemctl restart xray
 rm -rf /tmp/log
 rm -rf /tmp/log1
@@ -362,8 +374,8 @@ echo -e "=> WS TLS : /xrayssws" | tee -a /etc/log-create-user.log
 echo -e "=> GRPC   : ss-grpc" | tee -a /etc/log-create-user.log
 echo -e "=> OPOK   : ws://bugcom/xrayssws" | tee -a /etc/log-create-user.log
 echo -e "======Custom Import Config From URL =======" | tee -a /etc/log-create-user.log
-echo -e "URL Custom Config WS TLS   : http://${domain}:89/ss-ws-$user.txt" | tee -a /etc/log-create-user.log
-echo -e "URL Custom Config GRPC TLS : http://${domain}:89/ss-grpc-$user.txt" | tee -a /etc/log-create-user.log
+echo -e "URL Custom Config WS TLS   : sslinkws" | tee -a /etc/log-create-user.log
+echo -e "URL Custom Config GRPC TLS : sslinkgrpc" | tee -a /etc/log-create-user.log
 echo -e "Link Config WS HTTP/NONE TLS   : $nonsslinkws" | tee -a /etc/log-create-user.log
 echo -e "Link Config GRPC HTTP/NONE TLS : $nonsslinkgrpc" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
