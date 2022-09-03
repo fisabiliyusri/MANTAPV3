@@ -43,8 +43,11 @@ cat >/etc/nginx/conf.d/xray.conf <<EOF
 EOF
 sed -i '$ ilocation /' /etc/nginx/conf.d/xray.conf
 sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iif ($http_upgrade != "websocket") {' /etc/nginx/conf.d/xray.conf
+sed -i '$ i	return 404;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://0.0.0.0:8000;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://localhost:8000;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
