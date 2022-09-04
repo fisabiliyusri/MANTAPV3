@@ -69,15 +69,15 @@ echo -e "\E[44;1;39m            ⇱ MENU CEK XRAY Info Live⇲             \E[0m
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ XRAY Info Live⇲             \E[0m"
-echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | IP Address⇲             \E[0m"
+echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | IP Address Publik | Situs/IP Yang Di Buka⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo "----------------------------------------------";
-        cat /var/log/xray/access.log | awk '{print $0}' | tail -n 500 | cut -d " " -f 1,2,3 | sort | uniq > /tmp/xray-login.txt
+        cat /var/log/xray/access.log | awk '{print $0}' | tail -n 500 | cut -d " " -f 1,2,3,5 | sort | uniq > /tmp/xray-login.txt
         cat /tmp/xray-login.txt
 fi
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ XRAY Info Live⇲             \E[0m"
-echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | IP Address Publik⇲             \E[0m"
+echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | IP Address Publik| Situs/IP Yang Di Buka⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ Script MANTAPV3 By SL⇲             \E[0m"
