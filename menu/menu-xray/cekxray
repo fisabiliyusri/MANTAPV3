@@ -44,7 +44,7 @@ echo "----------------------------------------------";
         cat /tmp/anjay-login.txt
 fi
 echo "----------------------------------------------";
-echo "---------=[ XRAY Info Login ]=---------";
+echo "---------=[ XRAY Info Live ]=---------";
 echo "XRAY |  Tahun/Bulan/Tanggal  |  Jam | Destination IP Address";
 echo "----------------------------------------------";
         cat /var/log/xray/access.log | awk '{print $0}' | tail -n 500 | cut -d " " -f 1,2,3 | sort | uniq > /tmp/xray-login.txt
