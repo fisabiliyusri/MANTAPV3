@@ -99,7 +99,16 @@ tunggu dulu woy
 - VLESS GRPC       : **80**
 
 
-# Injeck SSH Examples
+# Info Injeck SSH Examples
+- ***PORT 443,80 = Wajib Websocket = Wajib Pake Payload Websocket***
+- ***Tanpa Payload = Port 8000***
+
+# Payload Websocket Examples
+- ***Payload***
+```
+GET ws://bugcom/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf]Connection: keep-alive[crlf][crlf]
+```
+
 # SSH Websocket Examples
 - ***Domain/IP/Host: namedomain/ip/bughost/serverssh/proxy***
 - ***SNI: bughost***
