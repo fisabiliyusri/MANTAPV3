@@ -77,7 +77,7 @@ echo "----------------------------------------------";
 fi
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ XRAY Info Live⇲             \E[0m"
-echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | Destination IP Address⇲             \E[0m"
+echo -e "\E[44;1;39m  ⇱ Tahun/Bulan/Tanggal  |  Jam | IP Address Publik⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ Script MANTAPV3 By SL⇲             \E[0m"
