@@ -38,16 +38,16 @@ anjay=$(netstat -anp | grep ESTABLISHED | grep xray | awk '{print $4,$5}' | sort
 rm -r /tmp/anjay-login.txt
 clear
 echo "---------=[ XRAY Login ]=---------";
-echo "XRAY |  IP Address  |  Destination IP/Website";
+echo "XRAY | Source IP Address  |  Destination IP/Website";
 echo "----------------------------------------------";
         netstat -anp | grep ESTABLISHED | grep xray | awk '{print $4,$5}' | sort | uniq > /tmp/anjay-login.txt
         cat /tmp/anjay-login.txt
 fi
 echo "----------------------------------------------";
 echo "---------=[ XRAY Info Login ]=---------";
-echo "XRAY |  IP Address  |  Connected";
+echo "XRAY |  Tahun/Bulan/Tanggal  |  Jam | Destination IP Address";
 echo "----------------------------------------------";
-        cat /var/log/xray/access.log | grep -B 4 "xray" | awk '{print $0}' | tail -n 500 | cut -d " " -f 1,2,3 | sort | uniq > /tmp/xray-login.txt
+        cat /var/log/xray/access.log | awk '{print $0}' | tail -n 500 | cut -d " " -f 1,2,3 | sort | uniq > /tmp/xray-login.txt
         cat /tmp/xray-login.txt
 fi
 echo "----------------------------------------------";
