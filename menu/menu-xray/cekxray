@@ -57,6 +57,7 @@ fi
 #
 if [ -f "/var/log/xray/access.log" ]; then
 echo ""
+rm -r /tmp/xray-login.txt
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m            ⇱ MENU CEK XRAY Info Live⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
