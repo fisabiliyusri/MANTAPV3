@@ -38,7 +38,7 @@ anjay=$(netstat -anp | grep ESTABLISHED | grep xray | awk '{print $4,$5}' | sort
 rm -r /tmp/anjay-login.txt
 clear
 echo "---------=[ XRAY Login ]=---------";
-echo "XRAY |  IP Address  |  Connected";
+echo "XRAY |  IP Address  |  Destination IP/Website";
 echo "----------------------------------------------";
         netstat -anp | grep ESTABLISHED | grep xray | awk '{print $4,$5}' | sort | uniq > /tmp/anjay-login.txt
         cat /tmp/anjay-login.txt
