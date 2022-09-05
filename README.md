@@ -35,7 +35,7 @@
 </h2>
 <h2 align="center">CDN/Reverse Proxy/Websocket</h2>
 
-[![Hits](https://img.shields.io/badge/Cloudflare_Only-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white&edge_flat=false)](https://github.com/fisabiliyusri/MANTAPV3)
+[![Hits](https://img.shields.io/badge/Domain_Cloudflare_Only-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white&edge_flat=false)](https://github.com/fisabiliyusri/MANTAPV3)
 </h2>
 <h2 align="center">Protokol Tunneling SSH</h2>
 
