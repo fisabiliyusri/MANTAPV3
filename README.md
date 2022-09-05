@@ -21,6 +21,7 @@
 </div>
 
 #
+[![Di Lihat](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffisabiliyusri%2FMANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=battle-dot-net.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 # Cara Install Script MANTAPV3
 - Login ke VPS kamu (VPS WAJIB PAKE AKSES ROOT )
 - HARAP DI BACA ,INI SCRIPT UNTUK MEMBUAT SERVER VPN /MEMASANG SERVER VPN
