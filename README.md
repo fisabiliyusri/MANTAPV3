@@ -20,8 +20,14 @@
 </h2>
 </div>
 
-#
-[![Di-Lihat](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffisabiliyusri%2FMANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=battle-dot-net.svg&icon_color=%23E7E7E7&title=Di-Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+# MANTAPV3
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffisabiliyusri%2FMANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=monster.svg&icon_color=%23FF0000&title=Di+Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/fisabiliyusri/MANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=angularjs.svg&icon_color=%23FF0000&title=Di+Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffisabiliyusri%2FMANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=notion.svg&icon_color=%2301021C&title=Di+Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffisabiliyusri%2FMANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=t-mobile.svg&icon_color=%23FAC805&title=Di+Lihat&edge_flat=true)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/fisabiliyusri/MANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=angular.svg&icon_color=%2338FF00&title=Di+Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/fisabiliyusri/MANTAPV3&count_bg=%2379C83D&title_bg=%23555555&icon=pixiv.svg&icon_color=%2300BDFF&title=Di+Lihat&edge_flat=false)](https://hits.seeyoufarm.com)
+
 # Cara Install Script MANTAPV3
 - Login ke VPS kamu (VPS WAJIB PAKE AKSES ROOT )
 - HARAP DI BACA ,INI SCRIPT UNTUK MEMBUAT SERVER VPN /MEMASANG SERVER VPN
