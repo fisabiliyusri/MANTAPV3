@@ -354,7 +354,7 @@ echo -e "====== Service Port =======" | tee -a /etc/log-create-user.log
 echo -e "Websocket SSL/TLS: 443" | tee -a /etc/log-create-user.log
 echo -e "Websocket HTTP/NONE TLS: 80" | tee -a /etc/log-create-user.log
 echo -e "GRPC SSL/TLS: 443" | tee -a /etc/log-create-user.log
-echo -e "GRPC HTTP/NON TLS: 80" | tee -a /etc/log-create-user.log
+echo -e "GRPC HTTP/NONE TLS: 80" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
 
 echo -e "Protokol VPN: TROJAN" | tee -a /etc/log-create-user.log
