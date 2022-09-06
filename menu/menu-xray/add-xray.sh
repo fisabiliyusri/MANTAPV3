@@ -368,9 +368,48 @@ cat > /home/vps/public_html/ss-grpc-$user.txt <<-END
   "stats": {}
 }
 END
-
 #
-#buatvmess
+cat>/etc/xray/vmess-$user-tls.json<<EOF
+      {
+      "v": "4",
+      "ps": "🔰VMESS GRPC TLS ${user}",
+      "add": "${domain}",
+      "port": "${vmgrpc}",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "grpc",
+      "path": "vmess-grpc",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "tls"
+}
+EOF
+#
+#GRPC
+cat>/etc/xray/vmess-$user-nontls.json<<EOF
+      {
+      "v": "4",
+      "ps": "🔰VMESS GRPC NONTLS ${user}",
+      "add": "${domain}",
+      "port": "${vmgrpcnon}",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "grpc",
+      "path": "vmess-grpc",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "none"
+}
+EOF
+#GRPC
+vmess_base641=$( base64 -w 0 <<< vmess_json1)
+vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmessgrpc="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
+vmessgrpcnon="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
+rm -rf /etc/xray/vmess-$user-tls.json
+rm -rf /etc/xray/vmess-$user-nontls.json
+#GRPC
+#
 clear
 echo -e "
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | tee -a /etc/log-create-user.log
