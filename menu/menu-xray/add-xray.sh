@@ -114,7 +114,48 @@ vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmess_base642=$( base64 -w 0 <<< $vmess_json2)
 vmesslinkws="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
 nonvmesslinkws="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
+###
+cat>/etc/xray/vmess-$user-tls.json<<EOF
+      {
+      "v": "4",
+      "ps": "🔰VMESS GRPC TLS ${user}",
+      "add": "${domain}",
+      "port": "443",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "grpc",
+      "path": "vmess-grpc",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "tls"
+}
+EOF
 #
+#GRPC
+cat>/etc/xray/vmess-$user-nontls.json<<EOF
+      {
+      "v": "4",
+      "ps": "🔰VMESS GRPC NONTLS ${user}",
+      "add": "${domain}",
+      "port": "80",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "grpc",
+      "path": "vmess-grpc",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "none"
+}
+EOF
+#GRPC
+vmess_base641=$( base64 -w 0 <<< vmess_json1)
+vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmesslinkgrpc="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
+nonvmesslinkgrpc="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
+rm -rf /etc/xray/vmess-$user-tls.json
+rm -rf /etc/xray/vmess-$user-nontls.json
+#GRPC
+###
 systemctl restart xray
 #buatvless WEBSOCKET
 vlesslinkws="vless://${uuid}@${domain}:443?path=/xrayws&security=tls&encryption=none&type=ws#${user}"
@@ -131,7 +172,6 @@ trojanlinkws="trojan://${uuid}@${domain}:443?path=/xraytrojanws&security=tls&hos
 trojanlinkgrpc="trojan://${uuid}@${domain}:80?mode=gun&security=none&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlinkws="trojan://${uuid}@${domain}:80?path=/xraytrojanws&security=none&host=bug.com&type=ws&sni=bug.com#${user}"
 
-#buatshadowsocks custom
 #
 cipher="aes-128-gcm"
 sed -i '/#ssws$/a\### '"$user $exp"'\
@@ -154,6 +194,7 @@ sslinkgrpc="ss://${shadowsocks_base64e}@${domain}:443?mode=gun&security=tls&encr
 nonsslinkgrpc="ss://${shadowsocks_base64e}@${domain}:80?mode=gun&security=none&encryption=none&type=grpc&serviceName=ssgrpc&sni=bug.com#${user}"
 
 systemctl restart xray
+#buatshadowsocks custom
 rm -rf /tmp/log
 rm -rf /tmp/log1
 cat > /home/vps/public_html/ss-ws-$user.txt <<-END
@@ -369,46 +410,6 @@ cat > /home/vps/public_html/ss-grpc-$user.txt <<-END
 }
 END
 #
-cat>/etc/xray/vmess-$user-tls.json<<EOF
-      {
-      "v": "4",
-      "ps": "🔰VMESS GRPC TLS ${user}",
-      "add": "${domain}",
-      "port": "${vmgrpc}",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "grpc",
-      "path": "vmess-grpc",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls"
-}
-EOF
-#
-#GRPC
-cat>/etc/xray/vmess-$user-nontls.json<<EOF
-      {
-      "v": "4",
-      "ps": "🔰VMESS GRPC NONTLS ${user}",
-      "add": "${domain}",
-      "port": "${vmgrpcnon}",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "grpc",
-      "path": "vmess-grpc",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "none"
-}
-EOF
-#GRPC
-vmess_base641=$( base64 -w 0 <<< vmess_json1)
-vmess_base642=$( base64 -w 0 <<< $vmess_json2)
-vmessgrpc="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
-vmessgrpcnon="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
-rm -rf /etc/xray/vmess-$user-tls.json
-rm -rf /etc/xray/vmess-$user-nontls.json
-#GRPC
 #
 clear
 echo -e "
@@ -449,9 +450,9 @@ echo -e "====== Path/ServiceName =======" | tee -a /etc/log-create-user.log
 echo -e "=> WS TLS : /xrayssws" | tee -a /etc/log-create-user.log
 echo -e "=> GRPC   : ss-grpc" | tee -a /etc/log-create-user.log
 echo -e "=> OPOK   : ws://bugcom/xrayssws" | tee -a /etc/log-create-user.log
-echo -e "======Custom Import Config From URL =======" | tee -a /etc/log-create-user.log
-echo -e "URL Custom Config WS TLS   : sslinkws" | tee -a /etc/log-create-user.log
-echo -e "URL Custom Config GRPC TLS : sslinkgrpc" | tee -a /etc/log-create-user.log
+echo -e "====== Import Config From Clipboard =======" | tee -a /etc/log-create-user.log
+echo -e "URL Config WS TLS   : sslinkws" | tee -a /etc/log-create-user.log
+echo -e "URL Config GRPC TLS : sslinkgrpc" | tee -a /etc/log-create-user.log
 echo -e "Link Config WS HTTP/NONE TLS   : $nonsslinkws" | tee -a /etc/log-create-user.log
 echo -e "Link Config GRPC HTTP/NONE TLS : $nonsslinkgrpc" | tee -a /etc/log-create-user.log
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
