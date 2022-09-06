@@ -61,7 +61,6 @@ clear
 		fi
 	done
 #
-#
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -80,7 +79,41 @@ sed -i '/#vmess$/a\#& '"$user $exp"'\
 sed -i '/#vmessgrpc$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
-
+#
+cat>/etc/xray/vmess-$user-tls.json<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "443",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/xrayvws",
+      "type": "none",
+      "host": "",
+      "tls": "tls"
+}
+EOF
+cat>/etc/xray/vmess-$user-nontls.json<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "80",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/xrayvws",
+      "type": "none",
+      "host": "",
+      "tls": "none"
+}
+EOF
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
+vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmesslinkws="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
+nonvmesslinkws="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
 #
 systemctl restart xray
 #buatvless WEBSOCKET
