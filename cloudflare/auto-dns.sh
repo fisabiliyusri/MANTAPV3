@@ -17,7 +17,6 @@ rm -rf /etc/xray/domain
 rm -rf /var/lib/crot/ipvps.conf
 # Buat Dns Records Secara Otomatis
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 DOMAIN=mantapxsl.my.id
 SUB_DOMAIN=zerochan-${sub}.mantapxsl.my.id
 NS_DOMAIN=zerokun-${sub}.mantapxsl.my.id
