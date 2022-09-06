@@ -75,7 +75,7 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"NS","name":"'${NS_DOMAIN}'","content":"'${SUB_DOMAIN}'","ttl":120,"proxied":false}')
 
 echo "IP=""$SUB_DOMAIN" >> /var/lib/crot/ipvps.conf
-echo $SUB_DOMAIN > /root/domain
+echo "$SUB_DOMAIN" >> /root/domain
 echo "$SUB_DOMAIN" >> /etc/xray/domain
 echo "$NS_DOMAIN" >> /root/nsdomain
 echo "Host : $SUB_DOMAIN"
