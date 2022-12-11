@@ -72,7 +72,7 @@ rm -rf /etc/nginx/conf.d/alone.conf
 systemctl stop nginx
 
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.6.6
 
 
 # set uuid
